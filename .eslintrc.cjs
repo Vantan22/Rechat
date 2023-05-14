@@ -16,9 +16,13 @@ module.exports = {
     "@typescript-eslint",
     "react",
     "prettier",
+    "import",
     "simple-import-sort",
   ],
   rules: {
+    "react/prop-types": "off",
+    "import/no-unused-modules": "error",
+    "import/no-unused-imports": "error",
     "react-refresh/only-export-components": "warn",
     "prettier/prettier": [
       "error",
