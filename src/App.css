@@ -4,3 +4,41 @@ a {
 ul {
   list-style: none;
 }
+.pointer{
+  cursor: pointer;
+}
+.InputComponent {
+  width: 340px;
+  height: 62px;
+  margin-bottom: 18px;
+}
+.InputComponent > span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  /* or 100% */
+
+  color: #fcf8e8;
+}
+.InputComponent-input {
+  position: relative;
+}
+.InputComponent-input input {
+  width: 100%;
+  height: 40px;
+  background: #fcf8e8;
+  border-radius: 4px;
+  padding: 5px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+.InputComponent-input > img {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+

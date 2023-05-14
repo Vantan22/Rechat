@@ -1,0 +1,38 @@
+.login-with-google {
+  position: absolute;
+  bottom: 20px;
+  .login-with {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    /* identical to box height, or 123% */
+    font-family: RetroFont;
+    color: #ffffff;
+    margin-bottom: 15px;
+    user-select: none;
+  }
+  div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    transition: all linear 0.3s;
+    span {
+      font-family: RetroFont;
+      color: #ffffff;
+      display: block;
+      height: 30px;
+      line-height: 30px;
+      margin-left: 8px;
+    }
+    
+  }
+  div:hover {
+    span {
+        color: #e9c46a;
+      }
+  }
+}
