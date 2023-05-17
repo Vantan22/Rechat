@@ -5,15 +5,19 @@ import InputComponent from "../../components/input/Input";
 import personden from "../../assets/Img/womanden.svg";
 import persontrang from "../../assets/Img/womantrang.svg";
 import LoginWithGoogle from "../../components/loginGoogle/LoginWithGoogle";
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const LoginPage = () => {
   const [isPersonEye, setIsPersonEye] = useState(false);
-  const handLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = (e) => {
+
+    console.log(e);
   };
   const handlePasswordShow = (e) => {
     setIsPersonEye(e);
   };
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
   return (
     <div id="Login" className="LoginPage">
       <div className="LoginPage-wrapper">
@@ -23,12 +27,13 @@ const LoginPage = () => {
             <h1>Đăng Nhập</h1>
           </header>
           <main>
-            <form onSubmit={handLogin}>
-              <InputComponent inputType="text" title="Tài khoản" />
+            <form onSubmit={handleSubmit(handleLogin)} method="post">
+              <InputComponent inputType="text" title="Tài khoản" inputValue={...register('userName',{ required: true })}/>
               <InputComponent
                 inputType="password"
                 title="Mật khẩu"
                 passwordIsShow={handlePasswordShow}
+                inputValue={...register('password',{ required: true })}
               />
               <span className="forgotpass">Quên mật khẩu</span>
               <button type="submit" className="btn-login">
@@ -39,8 +44,12 @@ const LoginPage = () => {
           <LoginWithGoogle />
         </div>
         <div className="LoginPage-right-content">
-          <span>Chào mừng trở lại</span>
+          <span className="chao-mung-tro-lai">Chào mừng trở lại</span>
           <img src={isPersonEye ? persontrang : personden} alt="" />
+          <div className="dang-ki-o-day ">
+            <span>Đăng ký ở đây nè</span>
+            <Link>Đăng Ký</Link>
+          </div>
         </div>
       </div>
     </div>
